@@ -501,7 +501,7 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     margin: auto;
-    height: 94%;
+    height: 90%;
 }
 
 #zuck-modal-content .story-viewer .slides .item.active, #zuck-modal-content .story-viewer .slides .item.active .tip.link {
@@ -515,14 +515,14 @@
     background: rgba(0, 0, 0, 0.5);
     font-size: 16px;
     position: absolute;
-    bottom: 44px;
+    bottom: 54px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     color: #fff;
     text-align: center;
     font-weight: 500;
-    padding: 12px 24px;
+    padding: 9px 24px;
 }
 #zuck-modal-content .story-viewer .tip.link {
     bottom: 0;

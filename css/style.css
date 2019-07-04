@@ -116,18 +116,23 @@ option:focus {
 
 .direct {
   position: absolute;
-  -webkit-transform: rotate(-30deg);
-  -ms-transform: rotate(-30deg);
-  transform: rotate(-30deg);
   left: 55%;
-  bottom: 12px;
+  bottom: 4px;
   cursor: pointer;
   z-index: 1000;
+  width: 26px;
+  height: 26px;
 }
 
-.direct .zmdi {
-  color: #fff;
-  font-size: 20px;
+.direct:before {
+  content: '';
+  position: absolute;
+  background: url(../images/direct.png) no-repeat;
+  background-size: cover;
+  width: 26px;
+  height: 26px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
 .header {
@@ -143,7 +148,7 @@ option:focus {
 }
 
 .header .menu-toggle {
-  margin-left: -21px;
+  margin-right: -21px;
 }
 
 .header .menu-toggle .ham {
@@ -213,6 +218,7 @@ option:focus {
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
+  display: none;
   right: 0;
   top: 75px;
   width: 400px;
@@ -225,9 +231,10 @@ option:focus {
 }
 
 .header .dropdown-menu.active {
-  -webkit-transform: translateX(-15px);
-  -ms-transform: translateX(-15px);
-  transform: translateX(-15px);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -435,13 +442,21 @@ div[data-story-id="case5"]:before {
   #zuck-modal-content .story-viewer .tip.link:before {
     top: -8px;
   }
-
-  .how-works {
-    margin-top: calc(100vh - 150px);
-  }
 }
 
 @media only screen and (max-width: 767px) {
+  .offset-two-side {
+    padding: 30px 0;
+  }
+
+  .header .dropdown-menu ul {
+    padding: 15px;
+  }
+
+  .header .dropdown-menu ul li a {
+    font-size: 16px;
+  }
+
   .footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -462,15 +477,35 @@ div[data-story-id="case5"]:before {
   .direct {
     left: 60%;
   }
+
+  .modal .title-modal {
+    font-size: 36px;
+  }
+
+  .logo-wrap .logo img {
+    height: 27px;
+  }
+
+  .logo-wrap .logo .name-site {
+    font-size: 26px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   .direct {
-    left: 72%;
+    left: 65%;
   }
 
   .header .dropdown-menu {
     width: 300px;
+  }
+
+  .title-s {
+    font-size: 28px;
+  }
+
+  .modal .title-modal {
+    font-size: 25px;
   }
 }
 

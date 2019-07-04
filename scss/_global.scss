@@ -1,6 +1,7 @@
 html {
   height: 100%;
 }
+
 body {
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 400;
@@ -19,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+
 }
 
 input:focus,
@@ -54,12 +56,14 @@ option:focus {
 .offset-two-side {
   padding: 60px 0;
 }
+
 .title-s {
   text-align: center;
   font-size: 32px;
   color: $black;
   font-family: 'Lobster', cursive;
 }
+
 //Logo
 .logo-wrap {
   .logo {
@@ -80,15 +84,23 @@ option:focus {
   }
 }
 //end Logo
+
 .direct {
   position: absolute;
-  transform: rotate(-30deg);
   left: 55%;
-  bottom: 12px;
+  bottom: 4px;
   cursor: pointer;
   z-index: 1000;
-  .zmdi {
-    color: $white;
-    font-size: 20px;
+  width: 26px;
+  height: 26px;
+  &:before {
+    content: '';
+    position: absolute;
+    background: url(../images/direct.png) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 26px;
+    height: 26px;
+    filter: invert(1);
   }
 }
