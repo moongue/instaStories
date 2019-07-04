@@ -11,13 +11,33 @@
 }
 
 @media #{$md} {
-  
+  #zuck-modal-content .story-viewer .tip.link:before {
+    top: -8px;
+  }
+  .how-works {
+    margin-top: calc(100vh - 150px);
+  }
 }
 
 @media #{$sm} {
-  
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    .copyright, .logo-wrap, .contacts-wrap {
+      padding: 20px 0;
+      text-align: center;
+    }
+  }
+  .direct {
+    left: 60%;
+  }
 }
 
 @media #{$xs} {
-  
+  .direct {
+    left: 72%;
+  }
+  .header .dropdown-menu {
+    width: 300px;
+  }
 }

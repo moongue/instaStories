@@ -1,0 +1,116 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //padding: 15px 0;
+  .menu-toggle {
+    margin-left: -21px;
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: #000;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
+
+    .ham6 .top {
+      stroke-dasharray: 40 172;
+    }
+
+    .ham6 .middle {
+      stroke-dasharray: 40 111;
+    }
+
+    .ham6 .bottom {
+      stroke-dasharray: 40 172;
+    }
+
+    .ham6.active .top {
+      stroke-dashoffset: -132px;
+    }
+
+    .ham6.active .middle {
+      stroke-dashoffset: -71px;
+    }
+
+    .ham6.active .bottom {
+      stroke-dashoffset: -132px;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    top: 75px;
+    width: 400px;
+    min-height: 400px;
+    background: $white;
+    z-index: 990;
+    transition: all .3s ease-in-out;
+
+    &.active {
+      transform: translateX(-15px);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    ul {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0 0 8px;
+
+      li {
+        padding: 10px 0;
+
+        a {
+          text-decoration: none;
+          font-size: 20px;
+          color: $black;
+
+        }
+      }
+    }
+  }
+
+  .social-network {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        margin-left: 20px;
+
+        a {
+          font-size: 20px;
+          color: $black;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

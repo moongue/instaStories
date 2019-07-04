@@ -1,0 +1,84 @@
+.content {
+  flex: 1 0 auto;
+
+
+}
+
+div[data-story-id="case1"] {
+
+  &:before {
+    content: 'Монтаж вентиляции \A и кондиционирования (Москва)';
+    position: absolute;
+    white-space: pre;
+    font-size: 14px;
+    transform: rotate(30deg);
+    z-index: 2;
+    left: 45%;
+    top: 17%;
+  }
+}
+
+div[data-story-id="case2"] {
+  &:before {
+    content: 'школа детского \A футбола (Казань)';
+    position: absolute;
+    font-size: 18px;
+    transform: rotate(30deg);
+    z-index: 2;
+    left: 54%;
+    font-weight: 600;
+    top: 17%;
+    color: $white;
+    white-space: pre;
+  }
+}
+
+div[data-story-id="case3"] {
+  &:before {
+    content: 'студия татуажа \A (Севастополь)';
+    white-space: pre;
+    position: absolute;
+    font-size: 18px;
+    padding: 25px;
+    background: linear-gradient(5deg, rgba(73, 221, 216, 1) 0%, #3369e7 100%);
+    z-index: 2;
+    border-radius: 9px;
+    left: 54%;
+    font-weight: 600;
+    top: 17%;
+    color: $white;
+  }
+}
+div[data-story-id="case4"] {
+  &:before {
+    content: ' Квиз, плиз! \A (Новосибирск)';
+    white-space: pre;
+    position: absolute;
+    font-size: 18px;
+    padding: 25px;
+    background: linear-gradient(135deg, #77e52d 0%,#2cc124 49%,#c2ce21 51%,#7db9e8 100%);
+    border-radius: 9px;
+    left: 54%;
+    z-index: 2;
+    font-weight: 600;
+    top: 17%;
+    color: $white;
+  }
+}
+div[data-story-id="case5"] {
+  &:before {
+    content: ' Сеть кафе \A “Безопасный кекс” \A (Саратов)';
+    white-space: pre;
+    position: absolute;
+    font-size: 18px;
+    padding: 25px;
+    background: linear-gradient(135deg, #77e52d 0%,#c2ce21 51%,#7db9e8 100%);    border-radius: 9px;
+    left: 54%;
+    z-index: 2;
+    font-weight: 600;
+    top: 17%;
+    color: $white;
+  }
+}
+
+
