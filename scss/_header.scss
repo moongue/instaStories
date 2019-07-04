@@ -58,9 +58,10 @@
 
   .dropdown-menu {
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
+    right: 0;
     top: 75px;
     width: 400px;
     min-height: 400px;

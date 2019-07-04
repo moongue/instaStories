@@ -208,11 +208,12 @@ option:focus {
 
 .header .dropdown-menu {
   position: absolute;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
+  right: 0;
   top: 75px;
   width: 400px;
   min-height: 400px;
