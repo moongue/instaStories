@@ -569,11 +569,12 @@
     }
 
     #zuck-modal-content .story-viewer .head .right .time {
-        display: block;
-        white-space: nowrap;
-        font-size: 15px;
-        margin: 15px 0;
-        line-height: 30px
+        display: none;
+        /*display: block;*/
+        /*white-space: nowrap;*/
+        /*font-size: 15px;*/
+        /*margin: 15px 0;*/
+        /*line-height: 30px*/
     }
 
     #zuck-modal-content .story-viewer .head .left > .back {

@@ -233,7 +233,7 @@
                     }
                 },
                 language: {
-                    unmute: 'Touch to unmute',
+                    unmute: 'Включить звук',
                     keyboardTip: 'Press space to see next',
                     visitLink: 'Подробнее',
                     time: {

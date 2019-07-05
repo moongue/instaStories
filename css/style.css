@@ -116,8 +116,8 @@ option:focus {
 
 .direct {
   position: absolute;
-  left: 55%;
-  bottom: 4px;
+  right: 30px;
+  bottom: 5px;
   cursor: pointer;
   z-index: 1000;
   width: 26px;
@@ -474,10 +474,6 @@ div[data-story-id="case5"]:before {
     text-align: center;
   }
 
-  .direct {
-    left: 60%;
-  }
-
   .modal .title-modal {
     font-size: 36px;
   }
@@ -492,10 +488,6 @@ div[data-story-id="case5"]:before {
 }
 
 @media only screen and (max-width: 576px) {
-  .direct {
-    left: 65%;
-  }
-
   .header .dropdown-menu {
     width: 300px;
   }

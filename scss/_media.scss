@@ -41,9 +41,7 @@
       text-align: center;
     }
   }
-  .direct {
-    left: 60%;
-  }
+
   .modal {
     .title-modal {
       font-size: 36px;
@@ -62,9 +60,7 @@
 }
 
 @media #{$xs} {
-  .direct {
-    left: 65%;
-  }
+
   .header .dropdown-menu {
     width: 300px;
   }
