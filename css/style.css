@@ -23,6 +23,22 @@
   src: local("Billabong"), url("../fonts/billabong/Billabong.woff") format("woff"), url("../fonts/billabong/Billabong.woff") format("truetype");
 }
 
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url("../fonts/helvetica/HelveticaNeueCyr-Medium.eot");
+  src: url("../fonts/helvetica/HelveticaNeueCyr-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica/HelveticaNeueCyr-Medium.woff") format("woff"), url("../fonts/helvetica/HelveticaNeueCyr-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url("../fonts/helvetica/HelveticaNeueCyr-Bold.eot");
+  src: url("../fonts/helvetica/HelveticaNeueCyr-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica/HelveticaNeueCyr-Bold.woff") format("woff"), url("../fonts/helvetica/HelveticaNeueCyr-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 html {
   height: 100%;
 }
@@ -49,7 +65,6 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
 }
 
 input:focus,
@@ -86,6 +101,95 @@ option:focus {
   padding: 60px 0;
 }
 
+.wrap-circle {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.wrap-circle.hide {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circle svg {
+  fill: none;
+  stroke: #8a3ab9;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke-draw 6s ease-out infinite alternate;
+  animation: stroke-draw 6s ease-out infinite alternate;
+}
+
+.circle img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 70px;
+  border-radius: 50%;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  height: 70px;
+}
+
+@-webkit-keyframes stroke-draw {
+  from {
+    stroke: #8a3ab9;
+    stroke-dasharray: 1;
+  }
+
+  to {
+    stroke: #cd486b;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    stroke-dasharray: 8;
+  }
+}
+
+@keyframes stroke-draw {
+  from {
+    stroke: #8a3ab9;
+    stroke-dasharray: 1;
+  }
+
+  to {
+    stroke: #cd486b;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    stroke-dasharray: 8;
+  }
+}
+
 .title-s {
   text-align: center;
   font-size: 32px;
@@ -117,7 +221,7 @@ option:focus {
 .direct {
   position: absolute;
   right: 30px;
-  bottom: 5px;
+  bottom: 10px;
   cursor: pointer;
   z-index: 1000;
   width: 26px;
@@ -129,29 +233,48 @@ option:focus {
   position: absolute;
   background: url(../images/direct.png) no-repeat;
   background-size: cover;
-  width: 26px;
-  height: 26px;
-  -webkit-filter: invert(1);
-  filter: invert(1);
+  width: 33px;
+  height: 33px;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.header .menu-toggle {
-  margin-right: -21px;
+.content #stories {
+  display: none;
 }
 
-.header .menu-toggle .ham {
+.content #zuck-modal {
+  height: calc(var(--vh, 1vh) * 100) !important;
+}
+
+.content #zuck-modal .goo {
+  font-size: 3rem;
+  line-height: 1.35;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background: red;
+  padding: 0.5rem 1rem;
+  -webkit-filter: url("#goo");
+  filter: url("#goo");
+}
+
+.content #zuck-modal .goo:focus {
+  outline: 0;
+}
+
+.content .menu-toggle {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.content .menu-toggle .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: -webkit-transform 400ms;
@@ -165,53 +288,53 @@ option:focus {
   user-select: none;
 }
 
-.header .menu-toggle .hamRotate.active {
+.content .menu-toggle .hamRotate.active {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.header .menu-toggle .hamRotate180.active {
+.content .menu-toggle .hamRotate180.active {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.header .menu-toggle .line {
+.content .menu-toggle .line {
   fill: none;
   -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   -o-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #000;
+  stroke: #3897f0;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
 
-.header .menu-toggle .ham6 .top {
+.content .menu-toggle .ham6 .top {
   stroke-dasharray: 40 172;
 }
 
-.header .menu-toggle .ham6 .middle {
+.content .menu-toggle .ham6 .middle {
   stroke-dasharray: 40 111;
 }
 
-.header .menu-toggle .ham6 .bottom {
+.content .menu-toggle .ham6 .bottom {
   stroke-dasharray: 40 172;
 }
 
-.header .menu-toggle .ham6.active .top {
+.content .menu-toggle .ham6.active .top {
   stroke-dashoffset: -132px;
 }
 
-.header .menu-toggle .ham6.active .middle {
+.content .menu-toggle .ham6.active .middle {
   stroke-dashoffset: -71px;
 }
 
-.header .menu-toggle .ham6.active .bottom {
+.content .menu-toggle .ham6.active .bottom {
   stroke-dashoffset: -132px;
 }
 
-.header .dropdown-menu {
+.content .dropdown-menu {
   position: absolute;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
@@ -222,7 +345,6 @@ option:focus {
   right: 0;
   top: 75px;
   width: 400px;
-  min-height: 400px;
   background: #fff;
   z-index: 990;
   -webkit-transition: all .3s ease-in-out;
@@ -230,7 +352,7 @@ option:focus {
   transition: all .3s ease-in-out;
 }
 
-.header .dropdown-menu.active {
+.content .dropdown-menu.active {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
@@ -239,7 +361,7 @@ option:focus {
   visibility: visible;
 }
 
-.header .dropdown-menu ul {
+.content .dropdown-menu ul {
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,52 +373,27 @@ option:focus {
   border-radius: 0 0 8px;
 }
 
-.header .dropdown-menu ul li {
+.content .dropdown-menu ul li {
   padding: 10px 0;
 }
 
-.header .dropdown-menu ul li a {
+.content .dropdown-menu ul li a {
   text-decoration: none;
   font-size: 20px;
   color: #000;
 }
 
-.header .social-network ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.header .social-network ul li {
-  margin-left: 20px;
-}
-
-.header .social-network ul li a {
-  font-size: 20px;
-  color: #000;
-  -webkit-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-.header .social-network ul li a:hover {
-  color: #007bff;
-}
-
-.content {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
 div[data-story-id="case1"]:before {
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: 600;
+  background: #75ce56;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 5px;
   content: 'Монтаж вентиляции \A и кондиционирования (Москва)';
   position: absolute;
   white-space: pre;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
@@ -305,67 +402,73 @@ div[data-story-id="case1"]:before {
   top: 17%;
 }
 
-div[data-story-id="case2"]:before {
+div[data-story-id="case3"]:before {
+  border-radius: 6px;
+  padding: 5px;
   content: 'школа детского \A футбола (Казань)';
   position: absolute;
   font-size: 18px;
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: 600;
+  background: #429bed;
+  color: #fff;
+  display: inline;
   z-index: 2;
   left: 54%;
-  font-weight: 600;
   top: 17%;
-  color: #fff;
   white-space: pre;
 }
 
-div[data-story-id="case3"]:before {
+div[data-story-id="case4"]:before {
+  border-radius: 6px;
+  padding: 2px 5px;
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: 600;
+  background: #fff;
+  color: #000;
   content: 'студия татуажа \A (Севастополь)';
   white-space: pre;
   position: absolute;
   font-size: 18px;
-  padding: 25px;
-  background: -o-linear-gradient(85deg, #49ddd8 0%, #3369e7 100%);
-  background: linear-gradient(5deg, #49ddd8 0%, #3369e7 100%);
   z-index: 2;
-  border-radius: 9px;
   left: 54%;
-  font-weight: 600;
   top: 17%;
-  color: #fff;
 }
 
-div[data-story-id="case4"]:before {
+div[data-story-id="case5"]:before {
+  border-radius: 6px;
+  padding: 2px 5px;
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: 600;
+  background: #75ce56;
+  color: #fff;
   content: ' Квиз, плиз! \A (Новосибирск)';
   white-space: pre;
   position: absolute;
   font-size: 18px;
-  padding: 25px;
-  background: -o-linear-gradient(315deg, #77e52d 0%, #2cc124 49%, #c2ce21 51%, #7db9e8 100%);
-  background: linear-gradient(135deg, #77e52d 0%, #2cc124 49%, #c2ce21 51%, #7db9e8 100%);
-  border-radius: 9px;
   left: 54%;
   z-index: 2;
-  font-weight: 600;
   top: 17%;
-  color: #fff;
 }
 
-div[data-story-id="case5"]:before {
+div[data-story-id="case2"]:before {
+  border-radius: 6px;
+  padding: 2px 5px;
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #d90011;
+  color: #fff;
   content: ' Сеть кафе \A “Безопасный кекс” \A (Саратов)';
   white-space: pre;
   position: absolute;
-  font-size: 18px;
-  padding: 25px;
-  background: -o-linear-gradient(315deg, #77e52d 0%, #c2ce21 51%, #7db9e8 100%);
-  background: linear-gradient(135deg, #77e52d 0%, #c2ce21 51%, #7db9e8 100%);
-  border-radius: 9px;
+  font-size: 14px;
   left: 54%;
   z-index: 2;
-  font-weight: 600;
   top: 17%;
-  color: #fff;
 }
 
 .footer {
@@ -419,8 +522,17 @@ div[data-story-id="case5"]:before {
 }
 
 .modal a.close-modal {
+  display: none !important;
+}
+
+.modal .close {
   top: 12.5px !important;
   right: 12.5px !important;
+  position: absolute;
+}
+
+.modal .close img {
+  height: 30px;
 }
 
 .modal .title-modal {
@@ -434,10 +546,6 @@ div[data-story-id="case5"]:before {
   font-size: 16px;
 }
 
-.how-works {
-  margin-top: calc(100vh - 237px);
-}
-
 @media only screen and (max-width: 1024px) {
   #zuck-modal-content .story-viewer .tip.link:before {
     top: -8px;
@@ -447,6 +555,22 @@ div[data-story-id="case5"]:before {
 @media only screen and (max-width: 767px) {
   .offset-two-side {
     padding: 30px 0;
+  }
+
+  .content .dropdown-menu {
+    width: 290px;
+  }
+
+  .content .dropdown-menu ul {
+    padding: 15px;
+  }
+
+  .content .dropdown-menu ul li {
+    padding: 5px 0;
+  }
+
+  .content .dropdown-menu ul li a {
+    font-size: 16px;
   }
 
   .header .dropdown-menu ul {
@@ -494,6 +618,10 @@ div[data-story-id="case5"]:before {
 
   .title-s {
     font-size: 28px;
+  }
+
+  .modal .close img {
+    height: 23px;
   }
 
   .modal .title-modal {

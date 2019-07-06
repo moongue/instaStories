@@ -1,6 +1,6 @@
-var initDemo = function () {
-    var header = document.getElementById("header");
-    var skin = location.href.split('skin=')[1];
+let initDemo = function () {
+    let header = document.getElementById("header");
+    let skin = location.href.split('skin=')[1];
 
     if (!skin) {
         skin = 'Snapgram';
@@ -10,7 +10,7 @@ var initDemo = function () {
         skin = skin.split('#')[0];
     }
 
-    var skins = {
+    let skins = {
         'Snapgram': {
             'avatars': true,
             'list': false,
@@ -20,17 +20,17 @@ var initDemo = function () {
 
     };
 
-    var timeIndex = 0;
-    var shifts = [35, 60, 60 * 3, 60 * 60 * 2, 60 * 60 * 25, 60 * 60 * 24 * 4, 60 * 60 * 24 * 10];
-    var timestamp = function () {
-        var now = new Date();
-        var shift = shifts[timeIndex++] || 0;
-        var date = new Date(now - shift * 1000);
+    let timeIndex = 0;
+    let shifts = [35, 60, 60 * 3, 60 * 60 * 2, 60 * 60 * 25, 60 * 60 * 24 * 4, 60 * 60 * 24 * 10];
+    let timestamp = function () {
+        let now = new Date();
+        let shift = shifts[timeIndex++] || 0;
+        let date = new Date(now - shift * 1000);
 
         return date.getTime() / 1000;
     };
 
-    var stories = new Zuck('stories', {
+    let stories = new Zuck('stories', {
         backNative: true,
         previousTap: true,
         autoFullScreen: skins[skin]['autoFullScreen'],
@@ -42,7 +42,7 @@ var initDemo = function () {
         callbacks: {
             'onEnd': function (storyId, callback) {
                 // alert(storyId);
-                if(storyId === 'case5') {
+                if (storyId === 'case5') {
                     $('#stories .story:first-child a').trigger('click');
                 }
                 callback();  // on end story
@@ -51,61 +51,62 @@ var initDemo = function () {
         stories: [
             {
                 id: "case1",
-                photo: "images/case1-img.jpg",
-                name: "Медея",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
                 link: "https://ramon.codes",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-1", "video", 3, "video/case1.TRIM.MOV", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-1", "video", 3, "video/case1.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
                 id: "case2",
-                photo: "images/case2-img.jpg",
-                name: "Андрей",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-2", "video", 0, "video/case2.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-3", "photo", 10, "video/case5.JPG", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
                 id: "case3",
-                photo: "images/case3-img.jpg",
-                name: "Светлана Горчеева",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-3", "video", 5, "video/case3.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-4", "video", 0, "video/case2.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
                 id: "case4",
-                photo: "images/case4-img.jpg",
-                name: "Андрей Тимонин",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-4", "video", 5, "video/case4.MOV", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-5", "video", 5, "video/case3.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
                 id: "case5",
-                photo: "images/case5-img.jpg",
-                name: "“Безопасный кекс”",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-5", "photo", 10, "video/case5.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-4", "video", 5, "video/case4.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", '#modal1', false, false, timestamp())
                 ]
-            }
+            },
+
         ]
     });
 
-    var el = document.querySelectorAll('#skin option');
-    var total = el.length;
-    for (var i = 0; i < total; i++) {
-        var what = (skin == el[i].value) ? true : false;
+    let el = document.querySelectorAll('#skin option');
+    let total = el.length;
+    for (let i = 0; i < total; i++) {
+        let what = (skin == el[i].value) ? true : false;
 
         if (what) {
             el[i].setAttribute('selected', what);
@@ -122,7 +123,9 @@ var initDemo = function () {
 
 
 function addTextStories() {
-    $('.slides .item').innerHTML = 'HELLO NIGGAS'
+    // $('.slides .item').innerHTML = 'HELLO NIGGAS';
+
+
 }
 
 function triggerClick() {
@@ -170,6 +173,24 @@ function smoothScroll() {
     $(".smooth-scroll").mPageScroll2id();
 }
 
+function swipeUnderStories() {
+    document.addEventListener('swiped-up', function (e) {
+        // console.log(e.target); // the element that was swiped
+        let elem = e.target;
+        if ($(elem).hasClass('item')) {
+            $('html, body').animate({
+                scrollTop: $("#howWorks").offset().top
+            }, 1000);
+        }
+    });
+}
+
+function fluidVh() {
+    let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 $(window).on('load', function () {
     initDemo();
     triggerClick();
@@ -179,10 +200,12 @@ $(window).on('load', function () {
     triggerStories();
     closeDropdown();
     smoothScroll();
+    swipeUnderStories();
+    fluidVh();
 });
 
 $(window).on('load', function () {
 
-    $('.preload').fadeOut(800);
+    $('.wrap-circle').fadeOut('8000');
 });
 

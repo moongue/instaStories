@@ -1,16 +1,136 @@
 .content {
   flex: 1 0 auto;
 
+  #stories {
+    display: none;
+  }
+  #zuck-modal {
+    height: calc(var(--vh, 1vh) * 100) !important;
+    .goo {
+      font-size: 3rem;
+      line-height: 1.35;
+      display: inline;
+      box-decoration-break: clone;
+      background: red;
+      padding: 0.5rem 1rem;
+      filter: url('#goo');
+    }
 
+    .goo:focus {
+      outline: 0;
+    }
+
+
+  }
+  .menu-toggle {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: #3897f0;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
+
+    .ham6 .top {
+      stroke-dasharray: 40 172;
+    }
+
+    .ham6 .middle {
+      stroke-dasharray: 40 111;
+    }
+
+    .ham6 .bottom {
+      stroke-dasharray: 40 172;
+    }
+
+    .ham6.active .top {
+      stroke-dashoffset: -132px;
+    }
+
+    .ham6.active .middle {
+      stroke-dashoffset: -71px;
+    }
+
+    .ham6.active .bottom {
+      stroke-dashoffset: -132px;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    right: 0;
+    top: 75px;
+    width: 400px;
+    background: $white;
+    z-index: 990;
+    transition: all .3s ease-in-out;
+
+    &.active {
+      transform: translateX(0);
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    ul {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0 0 8px;
+
+      li {
+        padding: 10px 0;
+
+        a {
+          text-decoration: none;
+          font-size: 20px;
+          color: $black;
+
+        }
+      }
+    }
+  }
 }
 
 div[data-story-id="case1"] {
 
   &:before {
+    font-family: 'Helvetica Neue Cyr', sans-serif;
+    font-weight: 600;
+    background: #75ce56;
+    color: $white;
+    border-radius: 6px;
+    padding: 2px 5px;
     content: 'Монтаж вентиляции \A и кондиционирования (Москва)';
     position: absolute;
     white-space: pre;
-    font-size: 14px;
+    font-size: 16px;
     transform: rotate(30deg);
     z-index: 2;
     left: 45%;
@@ -18,67 +138,78 @@ div[data-story-id="case1"] {
   }
 }
 
-div[data-story-id="case2"] {
+div[data-story-id="case3"] {
   &:before {
+    border-radius: 6px;
+    padding: 5px;
     content: 'школа детского \A футбола (Казань)';
     position: absolute;
     font-size: 18px;
     transform: rotate(30deg);
+    font-family: 'Helvetica Neue Cyr', sans-serif;
+    font-weight: 600;
+    background: #429bed;
+    color: $white;
+    display: inline;
     z-index: 2;
     left: 54%;
-    font-weight: 600;
     top: 17%;
-    color: $white;
     white-space: pre;
   }
 }
 
-div[data-story-id="case3"] {
+div[data-story-id="case4"] {
   &:before {
+    border-radius: 6px;
+    padding: 2px 5px;
+    font-family: 'Helvetica Neue Cyr', sans-serif;
+    font-weight: 600;
+    background: $white;
+    color: $black;
     content: 'студия татуажа \A (Севастополь)';
     white-space: pre;
     position: absolute;
     font-size: 18px;
-    padding: 25px;
-    background: linear-gradient(5deg, rgba(73, 221, 216, 1) 0%, #3369e7 100%);
     z-index: 2;
-    border-radius: 9px;
     left: 54%;
-    font-weight: 600;
     top: 17%;
-    color: $white;
   }
 }
-div[data-story-id="case4"] {
+
+div[data-story-id="case5"] {
   &:before {
+    border-radius: 6px;
+    padding: 2px 5px;
+    font-family: 'Helvetica Neue Cyr', sans-serif;
+    font-weight: 600;
+    background: #75ce56;
+    color: $white;
     content: ' Квиз, плиз! \A (Новосибирск)';
     white-space: pre;
     position: absolute;
     font-size: 18px;
-    padding: 25px;
-    background: linear-gradient(135deg, #77e52d 0%,#2cc124 49%,#c2ce21 51%,#7db9e8 100%);
-    border-radius: 9px;
     left: 54%;
     z-index: 2;
-    font-weight: 600;
     top: 17%;
-    color: $white;
-  }
-}
-div[data-story-id="case5"] {
-  &:before {
-    content: ' Сеть кафе \A “Безопасный кекс” \A (Саратов)';
-    white-space: pre;
-    position: absolute;
-    font-size: 18px;
-    padding: 25px;
-    background: linear-gradient(135deg, #77e52d 0%,#c2ce21 51%,#7db9e8 100%);    border-radius: 9px;
-    left: 54%;
-    z-index: 2;
-    font-weight: 600;
-    top: 17%;
-    color: $white;
   }
 }
 
+div[data-story-id="case2"] {
+  &:before {
+    border-radius: 6px;
+    padding: 2px 5px;
+    font-family: 'Helvetica Neue Cyr', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #d90011;
+    color: $white;
+    content: ' Сеть кафе \A “Безопасный кекс” \A (Саратов)';
+    white-space: pre;
+    position: absolute;
+    font-size: 14px;
+    left: 54%;
+    z-index: 2;
+    top: 17%;
+  }
+}
 

@@ -21,6 +21,20 @@
   .offset-two-side {
     padding: 30px 0;
   }
+  .content  {
+    .dropdown-menu {
+      width: 290px;
+      ul {
+        padding: 15px;
+        li {
+          padding: 5px 0;
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
   .header {
     .dropdown-menu {
       ul {
@@ -68,6 +82,11 @@
     font-size: 28px;
   }
   .modal {
+    .close {
+      img {
+        height: 23px;
+      }
+    }
     .title-modal {
       font-size: 25px;
     }

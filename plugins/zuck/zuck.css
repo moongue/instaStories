@@ -182,7 +182,6 @@
 #zuck-modal {
     outline: 0 !important;
     overflow: hidden;
-    position: fixed;
     background: rgba(0, 0, 0, 0.75);
     z-index: 980;
     font-size: 14px;
@@ -207,12 +206,8 @@
     transform: scale(0.01);
     transform-origin: top left;
     transition: 0.25s;
-    position: absolute;
-    left: 0;
     width: 100%;
-    height: calc(100vh - 75px);
-    top: 75px;
-    bottom: 0;
+    /*height: calc(100vh - 85px);*/
 }
 
 #zuck-modal.with-effects.animated {
@@ -396,6 +391,7 @@
     border-radius: 50%;
     vertical-align: middle;
     background-repeat: no-repeat;
+    filter: invert(1);
     background-position: center;
 }
 
@@ -415,6 +411,7 @@
     opacity: 0.75;
     font-weight: 500;
     font-size: 13px;
+    display: none !important;
 }
 
 #zuck-modal-content .story-viewer .head .left {
@@ -445,16 +442,18 @@
 }
 
 #zuck-modal-content .story-viewer .head .right .close, #zuck-modal-content .story-viewer .head .back {
-    font-size: 42px;
-    width: 48px;
-    cursor: pointer;
-    text-align: center;
+    /*font-size: 42px;*/
+    /*width: 48px;*/
+    /*cursor: pointer;*/
+    /*text-align: center;*/
+    display: none;
 }
 
 #zuck-modal-content .story-viewer .head .left > .back {
     display: none;
     width: 24px;
-    margin: -6px -6px 0 -6px
+    margin: -6px -6px 0 -6px;
+    pointer-events: none;
 }
 
 #zuck-modal-content .story-viewer .head .right .time {
@@ -501,7 +500,7 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     margin: auto;
-    height: 90%;
+    height: calc(100% - 40px);
 }
 
 #zuck-modal-content .story-viewer .slides .item.active, #zuck-modal-content .story-viewer .slides .item.active .tip.link {
@@ -540,11 +539,7 @@
         top: 3px;
     }
     #zuck-modal-content .story-viewer .tip.link:before {
-        top: -8px;
-    }
-
-    #zuck-modal.with-effects {
-        height: calc(100vh - 77px);
+        top: -5px;
     }
 
     #zuck-modal-content .story-viewer .head .loading {
@@ -592,10 +587,6 @@
         text-shadow: none;
     }
 
-    #zuck-modal-content .story-viewer.with-back-button .head .left > .back {
-        display: block;
-    }
-
     #zuck-modal-content .story-viewer.with-back-button .head .left .img {
         margin-left: 18px
     }
@@ -607,8 +598,7 @@
     }
 
     #zuck-modal-content .story-viewer .tip {
-        font-size: 14px;
-        padding: 6px 12px;
+        font-size: 18px;
     }
 
     #zuck-modal-content .story-viewer .head .left .time, #zuck-modal-content .story-viewer .head .right .close {

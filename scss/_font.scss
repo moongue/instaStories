@@ -2,17 +2,18 @@
   font-family: 'Proxima Nova';
   src: url('../fonts/proximaNova/ProximaNova-Regular.eot');
   src: url('../fonts/proximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/proximaNova/ProximaNova-Regular.woff') format('woff'),
-       url('../fonts/proximaNova/ProximaNova-Regular.ttf') format('truetype');
+  url('../fonts/proximaNova/ProximaNova-Regular.woff') format('woff'),
+  url('../fonts/proximaNova/ProximaNova-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../fonts/proximaNova/ProximaNova-Semibold.eot');
   src: url('../fonts/proximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/proximaNova/ProximaNova-Semibold.woff') format('woff'),
-       url('../fonts/proximaNova/ProximaNova-Semibold.ttf') format('truetype');
+  url('../fonts/proximaNova/ProximaNova-Semibold.woff') format('woff'),
+  url('../fonts/proximaNova/ProximaNova-Semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
@@ -22,5 +23,25 @@
   font-style: normal;
   font-weight: normal;
   src: local('Billabong'), url('../fonts/billabong/Billabong.woff') format('woff'),
-       url('../fonts/billabong/Billabong.woff') format('truetype');
+  url('../fonts/billabong/Billabong.woff') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Medium.eot');
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/HelveticaNeueCyr-Medium.woff') format('woff'),
+  url('../fonts/helvetica/HelveticaNeueCyr-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Bold.eot');
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/HelveticaNeueCyr-Bold.woff') format('woff'),
+  url('../fonts/helvetica/HelveticaNeueCyr-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }

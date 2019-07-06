@@ -7,10 +7,17 @@
   border-radius: 0 !important;
   height: 100vh;
   min-height: 400px;
-   a.close-modal {
-     top: 12.5px !important;
-     right: 12.5px !important;
-   }
+  a.close-modal {
+    display: none !important;
+  }
+  .close {
+    top: 12.5px !important;
+    right: 12.5px !important;
+    position: absolute;
+    img {
+      height: 30px;
+    }
+  }
   .title-modal {
     font-size: 48px;
     color: $black;
