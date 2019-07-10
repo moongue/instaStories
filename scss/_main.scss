@@ -19,8 +19,6 @@
     .goo:focus {
       outline: 0;
     }
-
-
   }
   .menu-toggle {
     display: inline-block;
@@ -117,6 +115,28 @@
     }
   }
 }
+
+#zuck-modal {
+  .media {
+    img {
+      height: 100%;
+    }
+
+    .title-stories {
+      margin-top: 40px;
+      font-size: 40px;
+      color: $white;
+      min-width: 300px;
+    }
+
+    .text-stories {
+      font-size: 18px;
+      color: $white;
+      margin-top: 25px;
+    }
+  }
+}
+
 
 div[data-story-id="case1"] {
 

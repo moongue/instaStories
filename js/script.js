@@ -46,9 +46,25 @@ let initDemo = function () {
                     $('#stories .story:first-child a').trigger('click');
                 }
                 callback();  // on end story
-            }
+            },
+            'onView': function(storyId) {
+                if ($("div[data-story-id='" + storyId + "'] > video").load()) {
+
+                    $("div[data-story-id='" + storyId + "'] > .slides-pointers").addClass('show');
+                }
+            },
         },
         stories: [
+            {
+                id: "preview",
+                photo: "images/logo.svg",
+                name: "Shohnin & Co",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    Zuck.buildItem("preview", "", 20, "<div class='title-stories'>Раскрутка инстаграм аккаунта</div><div class='text-stories'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores delectus eos expedita ipsam laudantium libero magnam minima molestias nisi odit placeat quasi reiciendis repellendus tempore temporibus, unde velit vero!</div>", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '#modal1', false, false, timestamp())
+                ]
+            },
             {
                 id: "case1",
                 photo: "images/logo.svg",
@@ -56,7 +72,7 @@ let initDemo = function () {
                 link: "https://ramon.codes",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-1", "video", 3, "video/case1.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-1", "video", 20, "video/case1.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
@@ -66,7 +82,7 @@ let initDemo = function () {
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    Zuck.buildItem("case-3", "photo", 10, "video/case5.JPG", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '#modal1', false, false, timestamp())
+                    Zuck.buildItem("case-3", "", 15, "<img src='video/case5.jpg' alt=''>", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '#modal1', false, false, timestamp())
                 ]
             },
             {
@@ -206,6 +222,6 @@ $(window).on('load', function () {
 
 $(window).on('load', function () {
 
-    $('.wrap-circle').fadeOut('8000');
+    $('.wrap-circle').addClass('hidden');
 });
 

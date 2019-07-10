@@ -35,6 +35,17 @@
       }
     }
   }
+
+  #zuck-modal {
+    .media {
+      .title-stories {
+        font-size: 22px;
+      }
+      .text-stories {
+        font-size: 16px;
+      }
+    }
+  }
   .header {
     .dropdown-menu {
       ul {
@@ -68,6 +79,14 @@
       }
       .name-site {
         font-size: 26px;
+      }
+    }
+  }
+  .will-contact {
+    &.block-seen {
+      .social-network {
+        flex-basis: 25%;
+        padding: 18px 0;
       }
     }
   }

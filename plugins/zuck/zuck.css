@@ -320,7 +320,7 @@
 }
 
 #zuck-modal-content .story-viewer .slides-pointers {
-    display: table;
+    display: none;
     table-layout: fixed;
     border-spacing: 6px;
     border-collapse: separate;
@@ -328,10 +328,13 @@
     width: 100vh;
     top: 0;
     bottom: 0;
-    top: 0;
     left: calc(50vw - 50vh);
     right: calc(50vw - 50vh);
     z-index: 100020;
+}
+
+#zuck-modal-content .story-viewer .slides-pointers.show {
+    display: table;
 }
 
 #zuck-modal-content .story-viewer .slides-pointers > * {

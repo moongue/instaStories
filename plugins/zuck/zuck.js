@@ -437,7 +437,7 @@
                         }
 
                         pointerItems += "\n                            <span ".concat(commonAttrs, " class=\"").concat(currentItem === i ? 'active' : '', " ").concat(seenClass, "\">\n                                <b style=\"animation-duration:").concat(length === '' ? '3' : length, "s\"></b>\n                            </span>");
-                        htmlItems += "\n            <div data-time=\"".concat(get(item, 'time'), "\" data-type=\"").concat(get(item, 'type'), "\"").concat(commonAttrs, " class=\"item ").concat(seenClass, " ").concat(currentItem === i ? 'active' : '', "\">\n              ").concat(renderCallback(item, "\n                ".concat(get(item, 'type') === 'video' ? "\n                      <video class=\"media\" muted webkit-playsinline playsinline preload=\"auto\" src=\"".concat(get(item, 'src'), "\" ").concat(get(item, 'type'), "></video>\n                      <b class=\"tip muted\">").concat(option('language', 'unmute'), "</b>\n                ") : "\n                      <img class=\"media\" src=\"".concat(get(item, 'src'), "\" ").concat(get(item, 'type'), ">\n                "), "\n\n                ").concat(get(item, 'link') ? "\n                      <a class=\"tip link\" href=\"".concat(get(item, 'link'), "\" rel=\"modal:open\" target=\"_blank\">\n                        ").concat(!linkText || linkText === '' ? option('language', 'visitLink') : linkText, "\n                      </a>\n                ") : "\n                ", "\n              ")), "\n  <a class='direct' href='#feedbackModal' rel='modal:open'></a>  \n       </div>");
+                        htmlItems += "\n            <div data-time=\"".concat(get(item, 'time'), "\" data-type=\"").concat(get(item, 'type'), "\"").concat(commonAttrs, " class=\"item ").concat(seenClass, " ").concat(currentItem === i ? 'active' : '', "\">\n              ").concat(renderCallback(item, "\n                ".concat(get(item, 'type') === 'video' ? "\n                      <video class=\"media\" muted webkit-playsinline playsinline preload=\"auto\" src=\"".concat(get(item, 'src'), "\" ").concat(get(item, 'type'), "></video>\n                      <b class=\"tip muted\">").concat(option('language', 'unmute'), "</b>\n                ") : "\n                      <div class=\"media\"> ".concat(get(item, 'src'), "\ ").concat(get(item, 'type'), "</div>\n                "), "\n\n                ").concat(get(item, 'link') ? "\n                      <a class=\"tip link\" href=\"".concat(get(item, 'link'), "\" rel=\"modal:open\" target=\"_blank\">\n                        ").concat(!linkText || linkText === '' ? option('language', 'visitLink') : linkText, "\n                      </a>\n                ") : "\n                ", "\n              ")), "\n  <a class='direct' href='#feedbackModal' rel='modal:open'></a>  \n       </div>");
                     });
                     slides.innerHTML = htmlItems;
                     var video = slides.querySelector('video');
@@ -479,7 +479,9 @@
                     storyViewer.className = "story-viewer muted ".concat(className, " ").concat(!forcePlay ? 'stopped' : '', " ").concat(option('backButton') ? 'with-back-button' : '');
                     storyViewer.setAttribute('data-story-id', storyId);
                     var html = "<div class=\"head\"><div class=\"left\">".concat(option('backButton') ? '<a class="back">&lsaquo;</a>' : '', "<u class=\"img\" style=\"background-image:url(").concat(get(storyData, 'photo'), ");\"></u><div><strong>").concat(get(storyData, 'name'), "</strong><span class=\"time\">").concat(currentItemTime, "</span></div></div><div class=\"right\"><span class=\"time\">").concat(currentItemTime, "</span><span class=\"loading\"></span><a class=\"close\" tabIndex=\"2\">&times;</a></div></div><div class=\"slides-pointers\"><div>").concat(pointerItems, "</div></div>");
+
                     storyViewer.innerHTML = html;
+
                     each(storyViewer.querySelectorAll('.close, .back'), function (i, el) {
                         el.onclick = function (e) {
                             e.preventDefault();
@@ -1165,3 +1167,4 @@
         global.ZuckJS = ZuckJS;
     }
 })(window);
+

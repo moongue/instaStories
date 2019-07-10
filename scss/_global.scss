@@ -55,6 +55,121 @@ option:focus {
   padding: 60px 0;
 }
 
+.title-s {
+  text-align: center;
+  font-size: 32px;
+  color: $black;
+  font-family: 'Lobster', cursive;
+}
+
+//Logo
+.logo-wrap {
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      height: 40px;
+    }
+
+    .name-site {
+      font-family: 'Billabong', sans-serif;
+      padding-left: 15px;
+      font-size: 34px;
+      color: $black;
+    }
+  }
+}
+
+//end Logo
+
+.direct {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  width: 26px;
+  height: 26px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: url(../images/direct.png) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 33px;
+    height: 33px;
+  }
+}
+
+.wrap-input {
+  margin-top: 10px;
+
+  p {
+    margin-bottom: 4px;
+    color: #000;
+    font-size: 18px;
+  }
+
+  input, .message-to-author {
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+  .message-to-author {
+    height: 150px;
+    padding: 20px;
+  }
+}
+
+.will-contact {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &.block-seen {
+    justify-content: center;
+    .social-network {
+      flex-basis: 15%;
+    }
+  }
+
+  .social-network {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 25px 0;
+    border-radius: 4px;
+
+    &.green-theme {
+      background: #76ca75;
+    }
+
+    &.blue-theme {
+      background: #4eacea;
+    }
+
+    &.dark-blue {
+      background: #7540aa;
+    }
+
+    &:nth-child(2) {
+      margin: 0 5%;
+    }
+
+    img {
+      height: 40px;
+      filter: invert(1);
+    }
+  }
+}
 .wrap-circle {
   background: #000;
   width: 100%;
@@ -67,7 +182,8 @@ option:focus {
   left: 0;
   z-index: 999999999;
   transition: all .3s ease-in-out;
-  &.hide {
+  transition-delay: 1s;
+  &.hidden {
     transform: scale(0);
     opacity: 0;
     visibility: hidden;
@@ -107,99 +223,5 @@ option:focus {
     stroke:#cd486b;
     transform:rotate(180deg);
     stroke-dasharray: 8;
-  }
-}
-
-.title-s {
-  text-align: center;
-  font-size: 32px;
-  color: $black;
-  font-family: 'Lobster', cursive;
-}
-//.wrap-circle {
-//  background: #000;
-//  width: 100%;
-//  height: 100%;
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  position: fixed;
-//  z-index: 999999999;
-//  top: 0;
-//  left: 0;
-//}
-//.circle{
-//  width:100px;
-//  height:100px;
-//  svg{
-//    fill:none;
-//    stroke:#8a3ab9;
-//    stroke-linecap: round;
-//    stroke-width:3;
-//    stroke-dasharray: 1;
-//    stroke-dashoffset: 0;
-//    animation: stroke-draw 6s ease-out infinite alternate;
-//    // animation: stroke-draw 6s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
-//  }
-//  img{
-//    position:absolute;
-//    left:50%;
-//    top:50%;
-//    transform:translate(-50%, -50%);
-//    width:70px;
-//    border-radius:50%;
-//    filter: invert(1);
-//    height: 70px;
-//  }
-//}
-//@keyframes stroke-draw {
-//  from{
-//    stroke:#8a3ab9;
-//    stroke-dasharray: 1;
-//  }
-//  to{
-//    stroke:#cd486b;
-//    transform:rotate(180deg);
-//    stroke-dasharray: 8;
-//  }
-//}
-
-//Logo
-.logo-wrap {
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-
-    img {
-      height: 40px;
-    }
-
-    .name-site {
-      font-family: 'Billabong', sans-serif;
-      padding-left: 15px;
-      font-size: 34px;
-      color: $black;
-    }
-  }
-}
-//end Logo
-
-.direct {
-  position: absolute;
-  right: 30px;
-  bottom: 10px;
-  cursor: pointer;
-  z-index: 1000;
-  width: 26px;
-  height: 26px;
-  &:before {
-    content: '';
-    position: absolute;
-    background: url(../images/direct.png) no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    width: 33px;
-    height: 33px;
   }
 }

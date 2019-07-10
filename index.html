@@ -65,13 +65,37 @@
    </section>
    <section class="contacts offset-two-side" id="contacts">
       <div class="title-s">
-         Контакты
+         Связаться с нами
       </div>
+      <div class="will-contact block-seen">
+         <a href="#" class="social-network green-theme">
+            <img src="images/whatsapp-logo.svg" alt="">
+         </a>
+         <a href="#" class="social-network blue-theme">
+            <img src="images/telegram-logo.svg" alt="">
+         </a>
+         <a href="#" class="social-network dark-blue">
+            <img src="images/viber.svg" alt="">
+         </a>
+      </div>
+      <form action="" class="feedback">
+         <div class="wrap-input">
+            <p>Имя</p>
+            <input type="text">
+         </div>
+         <div class="wrap-input">
+            <p>Телефон</p>
+            <input type="text">
+         </div>
+         <div class="wrap-input">
+            <p>Сообщение</p>
+         <textarea name="" id="" cols="30" rows="10" class="message-to-author"></textarea>
+         </div>
+      </form>
    </section>
 </div>
 <!--/Another content-->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!--   <footer class="footer">-->
 <!--      <div class="copyright">-->
@@ -94,36 +118,66 @@
 
 
 <!--Modals-->
-<div id="modal1" class="modal">
-   <p class="title-modal">Thanks for clicking. That felt good.</p>
-   <a href="#" rel="modal:close" class="close"><img src="images/close.svg" alt=""></a>
-   <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi dicta earum eligendi eveniet
-      facere fugit in inventore laboriosam laborum, maxime minus molestias neque, nobis possimus quibusdam sapiente
-      temporibus? Cum deleniti, eaque est fuga impedit magnam maxime omnis possimus temporibus?
-   </p>
-</div>
-
 <div id="feedbackModal" class="modal">
-   <p class="title-modal">Оставить заявку</p>
    <a href="#" rel="modal:close" class="close"><img src="images/close.svg" alt=""></a>
+   <div class="user-wrap">
+      <div class="user-icon">
+         <img src="images/logo.svg" alt="">
+      </div>
+      <p class="username">
+         @instagram
+      </p>
+   </div>
+   <form action="" class="form-feedback">
+      <div class="wrap-input">
+         <p>Имя</p>
+         <input type="text">
+      </div>
+      <div class="wrap-input">
+         <p>Email</p>
+         <input type="email">
+      </div>
+      <div class="wrap-input">
+         <p>Телефон</p>
+         <input type="text">
+      </div>
+   </form>
 
-   <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi dicta earum eligendi eveniet
-      facere fugit in inventore laboriosam laborum, maxime minus molestias neque, nobis possimus quibusdam sapiente
-      temporibus? Cum deleniti, eaque est fuga impedit magnam maxime omnis possimus temporibus?
-   </p>
+   <button class="btn-styles">
+      Отправить
+   </button>
 </div>
+
+<div id="modal1" class="modal">
+   <a href="#" rel="modal:close" class="close"><img src="images/close.svg" alt=""></a>
+   <div class="user-wrap">
+      <div class="user-icon">
+         <img src="images/logo.svg" alt="">
+      </div>
+      <p class="username">
+         @instagram
+      </p>
+   </div>
+   <div class="title-modal">
+      Напишите нам
+   </div>
+   <div class="will-contact">
+      <a href="#" class="social-network green-theme">
+         <img src="images/whatsapp-logo.svg" alt="">
+      </a>
+      <a href="#" class="social-network blue-theme">
+         <img src="images/telegram-logo.svg" alt="">
+      </a>
+      <a href="#" class="social-network dark-blue">
+         <img src="images/viber.svg" alt="">
+      </a>
+   </div>
+
+</div>
+
 <!--/Modals-->
-<!--<div class="wrap-circle">-->
-<!--   <div class="circle">-->
-<!--      <img src="images/logo.svg" alt=""/>-->
-<!--      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="enable-background:new -580 439 577.9 194;"-->
-<!--           xml:space="preserve">-->
-<!--    <circle cx="50" cy="50" r="40"/>-->
-<!--  </svg>-->
-<!--   </div>-->
-<!--</div>-->
+
+
 <div class="wrap-circle">
    <div class="circle">
       <img src="images/logo.svg" alt=""/>
@@ -133,6 +187,7 @@
   </svg>
    </div>
 </div>
+
 <!--<div class="preload"></div>-->
 <!--Scripts-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

@@ -1,31 +1,94 @@
 .blocker {
   padding: 0 !important;
 }
+
 .modal {
-  max-width: 100% !important;
   width: 100% !important;
-  border-radius: 0 !important;
-  height: 100vh;
+  height: auto;
   min-height: 400px;
+  max-width: 560px !important;
+  background: #f0f1f6;
+  padding: 50px 30px !important;
+  border-radius: 8px !important;
+
   a.close-modal {
     display: none !important;
   }
+
   .close {
     top: 12.5px !important;
     right: 12.5px !important;
     position: absolute;
+
     img {
-      height: 30px;
+      height: 15px;
     }
   }
+
   .title-modal {
-    font-size: 48px;
+    text-align: center;
+    font-size: 28px;
     color: $black;
-    font-family: 'Lobster', cursive;
   }
+
   p {
-    padding-top: 20px;
     font-size: 16px;
 
+  }
+
+  .user-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .user-icon {
+      img {
+        border-radius: 50%;
+        height: 100px;
+      }
+    }
+
+    .username {
+      margin-top: 10px;
+      color: #818287;
+      font-weight: 300;
+      font-size: 17px;
+    }
+  }
+
+  .form-feedback {
+    .wrap-input {
+      margin-top: 10px;
+
+      p {
+        margin-bottom: 4px;
+        color: #000;
+        font-size: 18px;
+      }
+
+      input {
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+        height: 50px;
+        width: 100%;
+        border: none;
+        background: #fff;
+        padding: 0 20px;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .btn-styles {
+    height: 50px;
+    border-radius: 3px;
+    width: 100%;
+    border: none;
+    background: #7d94f2;
+    color: $white;
+    font-size: 18px;
+    margin-top: 37px;
+    cursor: pointer;
   }
 }
